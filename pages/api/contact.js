@@ -8,8 +8,8 @@ export default function (req, res) {
     port: 587,     
     host: "smtp.gmail.com",
        auth: {
-            user: process.env.USER,
-            pass: process.env.PASS,
+            user: process.env.APP_USER,
+            pass: process.env.APP_PASS,
          },
     secure: true,
   });
@@ -23,7 +23,7 @@ export default function (req, res) {
   });
   
   const mailData = {
-      from: 'demo email',
+      from: 'demo email <email@test.com>',
       to: 'aionservicechatbot@gmail.com',
       subject: `Message From ${req.body.name} subject ${req.body.subject} `,
       text: req.body.message + " | Sent from: " + req.body.email + " | Sent from: " + req.body.phone,

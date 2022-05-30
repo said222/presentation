@@ -3,7 +3,7 @@
  * Author: Marketify
  * This file is made for CURRENT TEMPLATE
 */
-
+window.$ = window.jQuery = require('jquery')
 jQuery(document).ready(function(){
 
 	"use strict";

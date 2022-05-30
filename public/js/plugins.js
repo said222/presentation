@@ -27,7 +27,7 @@
  * });
  */
 
-
+window.$ = window.jQuery = require('jquery')
 
 ;(function($, window, document, undefined){
 
