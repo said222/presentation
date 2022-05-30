@@ -4,6 +4,7 @@ import React from 'react'
 import Head from 'next/head'
 import Script from 'next/script'
 import axios from 'axios';
+import jQuery from 'jquery'
 // import mg from 'mailgun-js';
 // import Mailgun from 'mailgun-js';
 
@@ -29,7 +30,7 @@ export default function IndexPage() {
             message,
           };
 
-        fetch('/api/contact', {
+        fetch('api/contact', {
             method: 'POST',
             headers: {
               'Accept': 'application/json, text/plain, */*',
@@ -38,8 +39,10 @@ export default function IndexPage() {
             body: JSON.stringify(data)
           }).then((res) => {
               console.log('Response received')
+              console.log(res)
               if (res.status === 200) {
                   console.log('Response succeeded!')
+                  console.log(res)
                   setSubmitted(true) 
                   setName('')
                   setEmail('')
@@ -1795,9 +1798,9 @@ export default function IndexPage() {
 
                 {/* SCRIPTS */}
                 
+                <Script type="text/javascript" src="js/jquery.js"></Script>
                 <Script type="text/javascript" src="js/plugins.js"  ></Script>
                 <Script type="text/javascript" src="js/init.js" ></Script>
-                <Script type="text/javascript" src="js/jquery.js"></Script>
                 {/* /SCRIPTS */}
             </>
         )

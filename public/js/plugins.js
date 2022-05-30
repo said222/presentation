@@ -27,8 +27,11 @@
  * });
  */
 
+
+
 ;(function($, window, document, undefined){
 
+	//import jQuery from 'jquery'
 	// our plugin constructor
 	var OnePageNav = function(elem, options){
 		this.elem = elem;
