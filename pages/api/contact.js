@@ -11,7 +11,7 @@ export default function (req, res) {
             user: process.env.USER,
             pass: process.env.PASS,
          },
-    secure: false,
+    secure: true,
   });
 
   transporter.verify(function (error, success) {
@@ -25,9 +25,9 @@ export default function (req, res) {
   const mailData = {
       from: 'demo email',
       to: 'aionservicechatbot@gmail.com',
-      subject: `Message From ${req.body.name}`,
-      text: req.body.message + " | Sent from: " + req.body.email,
-      html: `<div>${req.body.message}</div><p>Sent from: ${req.body.email}</p>`
+      subject: `Message From ${req.body.name} subject ${req.body.subject} `,
+      text: req.body.message + " | Sent from: " + req.body.email + " | Sent from: " + req.body.phone,
+      html: `<div>${req.body.message}</div><p>Sent from: ${req.body.email}</p><p>Sent from: ${req.body.phone}</p>`
   }
 
   transporter.sendMail(mailData, function (err, info) {
