@@ -4,14 +4,13 @@ export default function (req, res) {
   
   let nodemailer = require('nodemailer')
   
-  const transporter = nodemailer.createTransport({
-    port: 587,     
+  const transporter = nodemailer.createTransport({    
     host: "smtp.mailtrap.io",
        auth: {
             user: process.env.APP_USER,
             pass: process.env.APP_PASS,
          },
-    secure: true,
+    // secure: true,
   });
 
   transporter.verify(function (error, success) {
@@ -24,7 +23,7 @@ export default function (req, res) {
   
   const mailData = {
       from: 'demo email <email@test.com>',
-      to: 'aionservicechatbot@gmail.com',
+      to: 'ssosystem34@gmail.com',
       subject: `Message From ${req.body.name} subject ${req.body.subject} `,
       text: req.body.message + " | Sent from: " + req.body.email + " | Sent from: " + req.body.phone,
       html: `<div>${req.body.message}</div><p>Sent from: ${req.body.email}</p><p>Sent from: ${req.body.phone}</p>`
