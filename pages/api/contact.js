@@ -8,7 +8,7 @@ export default function (req, res) {
     host: "smtp.mailtrap.io",
     port: 2525,
     debug: true,
-    secure: true,
+    secure: false,
     auth: {
       user: '9de9cf39d33a6d',
       pass: '234ecaabea398d',
