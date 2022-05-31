@@ -25,9 +25,9 @@ export default function (req, res) {
   const mailData = {
       from: 'demo email <email@test.com>',
       to: 'ssosystem34@gmail.com',
-      subject: `Message From ${req.body.name} subject ${req.body.subject} `,
-      text: req.body.message + " | Sent from: " + req.body.email + " | Sent from: " + req.body.phone,
-      html: `<div>${req.body.message}</div><p>Sent from: ${req.body.email}</p><p>Sent from: ${req.body.phone}</p>`
+      subject: `Message From ${req.body.name} `,
+      text: "Subject: " +req.body.subject + "Message: " +req.body.message + " | Sent from: " + req.body.email + " | phone number : " + req.body.phone,
+      html: `<div><p>Subject: ${req.body.subject}</p></div><div><p>Message: ${req.body.message}</p></div><p>Sent from: ${req.body.email}</p><p>phone number: ${req.body.phone}</p>`
   }
 
   transporter.sendMail(mailData, function (err, info) {

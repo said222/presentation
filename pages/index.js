@@ -1662,11 +1662,12 @@ export default function IndexPage() {
                                 <div className="input_list">
                                     <ul>
                                     <li>
-                                        <input id="name" type="text" placeholder="Your Name" onChange={e => setName(e.target.value)} />
+                                        <input id="name" type="text" placeholder="Your Name" name="name" onChange={e => setName(e.target.value)} />
                                     </li>
                                     <li>
                                         <input
                                         id="email"
+                                        name="email"
                                         type="text"
                                         placeholder="Your Email"
                                         onChange={e => setEmail(e.target.value)}
@@ -1675,6 +1676,7 @@ export default function IndexPage() {
                                     <li>
                                         <input
                                         id="phone"
+                                        name="phone"
                                         type="number"
                                         placeholder="Your Phone"
                                         onChange={e => setPhone(e.target.value)}
@@ -1688,6 +1690,7 @@ export default function IndexPage() {
                                 <div className="message_area">
                                     <textarea
                                     id="message"
+                                    name="message"
                                     placeholder="Write your message here"
                                     defaultValue={""}
                                     onChange={e => setMessage(e.target.value)}
