@@ -6,9 +6,10 @@ export default function (req, res) {
   
   const transporter = nodemailer.createTransport({    
     host: "smtp.mailtrap.io",
+    port: 2525,
        auth: {
-            user: process.env.APP_USER,
-            pass: process.env.APP_PASS,
+            user: '9de9cf39d33a6d',
+            pass: '234ecaabea398d',
          },
     // secure: true,
   });
