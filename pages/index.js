@@ -1803,9 +1803,9 @@ export default function IndexPage() {
 
                 {/* SCRIPTS */}
                 
-                <Script type="text/javascript" src="js/jquery.js"></Script>
-                <Script type="text/javascript" src="js/plugins.js"  ></Script>
-                <Script type="text/javascript" src="js/init.js" ></Script>
+                <Script strategy="beforeInteractive" type="text/javascript" src="js/jquery.js" />
+                <Script strategy="beforeInteractive" type="text/javascript" src="js/plugins.js" />
+                <Script type="text/javascript" src="js/init.js" />
                 {/* /SCRIPTS */}
             </>
         )
